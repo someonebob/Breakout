@@ -1,0 +1,47 @@
+I thought the Centipong variant was very interesting because of the exponential chaos it caused. 
+The goal is basically to try to weave through the blocks to hit the centipedes at the top so that when extra balls spawn they pretty much do all the work for you.
+Just seeing all the balls fly around the screen has a certain satisfaction to it.
+
+For my own Breakout game, I plan to keep it pretty simple as I don't have much experience and I probably wouldn't be able to implement many things in time.
+I intend to have the first level be a simple classic layout of 7 rows of blocks (one for each color in the rainbow) near the top with no powerups.
+
+--------------------
+--------------------
+--------------------
+--------------------
+--------------------
+--------------------
+--------------------
+
+
+The second level will have blocks on the left and right but no blocks in the middle and power ups in the middle of the blocks on each side.
+
+-------      -------
+-------      -------
+-------      -------
+---*---      ---*---
+-------      -------
+-------      -------
+-------      -------
+
+The third level will be a circle of blocks with a power up in the middle.
+
+        -----
+      ---------
+    ----     ----
+   ---         ---
+   ---    *    ---
+   ---         ---
+    ----     ----
+      ---------
+        -----
+
+I want to have normal blocks in the 7 colors of the rainbow, a stone block that will take 2 hits to break, an iron block that takes 3 hits to break, and a diamond block that is unbreakable.
+There will also be a powerup block that drops a powerup when hit, the more hits to break a block the more points it is worth.
+
+I want to have a multiball powerup where the ball splits into 3 balls going in random directions, a fireball powerup where the ball just goes through the blocks, and an increase ball size powerup.
+For the paddle there will be a increase paddle size powerup and a second paddle powerup, the paddle will decrease in size after each level.
+
+I will include a cheat key for infinite lives, skip level, reset level, and maybe an all powerups cheat.
+
+Something extra I will try to include is a boss level at the end where the boss is a moving block that takes many hits to destroy and will occasionally drop powerups when hit. The fireball will not go through it but will count for 5 hits.            
