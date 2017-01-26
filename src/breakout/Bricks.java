@@ -1,5 +1,10 @@
 // This entire file is part of my masterpiece.
 // Jesse Yue
+/**
+ * This codes purpose is to create all the different types of blocks used throughout the game (normal, stone, iron, powerup).
+ * I think it is well designed because all the variable names and methods are well names and easy understand.
+ * I refactored the code to change some of the variable names to be more readable and also included the inheritance of Rectangle to get rid of a method that just returned an existing method.
+ */
 package breakout;
 
 import java.util.ArrayList;
@@ -8,19 +13,20 @@ import java.util.HashMap;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Bricks extends Rectangle{
+public class Bricks extends Rectangle {
 	private Rectangle brick;
 	private ArrayList<Rectangle> bricks;
-	private int width = 640;
-	private int height = 480;
-	private int brickwidth = width / 9;
-	private int brickheight = height / 15;
-	private HashMap<Rectangle, Integer> stonemap, ironmap;
+	private int scenewidth = 640;
+	private int sceneheight = 480;
+	private int brickwidth = scenewidth / 9;
+	private int brickheight = sceneheight / 15;
+	private int hits = 0;
+	private HashMap<Rectangle, Integer> stonehits, ironhits;
 
 	public Bricks() {
 		bricks = new ArrayList<Rectangle>();
-		stonemap = new HashMap<Rectangle, Integer>();
-		ironmap = new HashMap<Rectangle, Integer>();
+		stonehits = new HashMap<Rectangle, Integer>();
+		ironhits = new HashMap<Rectangle, Integer>();
 	}
 
 	public Rectangle getBrick(int xposition, int yposition) {
@@ -36,7 +42,7 @@ public class Bricks extends Rectangle{
 		brick.setFill(Color.DARKGRAY);
 		brick.setStroke(Color.BLACK);
 
-		stonemap.put(brick, 0);
+		stonehits.put(brick, hits);
 
 		bricks.add(brick);
 		return brick;
@@ -47,7 +53,7 @@ public class Bricks extends Rectangle{
 		brick.setFill(Color.SILVER);
 		brick.setStroke(Color.BLACK);
 
-		ironmap.put(brick, 0);
+		ironhits.put(brick, hits);
 
 		bricks.add(brick);
 
@@ -77,19 +83,19 @@ public class Bricks extends Rectangle{
 	}
 
 	public void stoneHit(Rectangle brick) {
-		stonemap.put(brick, stonemap.get(brick) + 1);
+		stonehits.put(brick, stonehits.get(brick) + 1);
 	}
 
 	public void ironHit(Rectangle brick) {
-		ironmap.put(brick, ironmap.get(brick) + 1);
+		ironhits.put(brick, ironhits.get(brick) + 1);
 	}
 
 	public int getStoneHits(Rectangle brick) {
-		return stonemap.get(brick);
+		return stonehits.get(brick);
 	}
 
 	public int getIronHits(Rectangle brick) {
-		return ironmap.get(brick);
+		return ironhits.get(brick);
 	}
 
 	public void changeStoneOpacity(Rectangle brick, int hits) {
