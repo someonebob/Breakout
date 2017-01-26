@@ -1,13 +1,14 @@
+// This entire file is part of my masterpiece.
+// Jesse Yue
 package breakout;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import javafx.geometry.Bounds;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Bricks {
+public class Bricks extends Rectangle{
 	private Rectangle brick;
 	private ArrayList<Rectangle> bricks;
 	private int width = 640;
@@ -110,26 +111,21 @@ public class Bricks {
 		return bricks;
 	}
 
-	public Bounds getBoundsInParent() {
-		return brick.getBoundsInParent();
-	}
-
-	public void setBrickColor(int i) {
-		if (i == 2) {
+	public void setBrickColor(int row) {
+		if (row == 2) {
 			brick.setFill(Color.RED);
-		} else if (i == 3) {
+		} else if (row == 3) {
 			brick.setFill(Color.ORANGE);
-		} else if (i == 4) {
+		} else if (row == 4) {
 			brick.setFill(Color.YELLOW);
-		} else if (i == 5) {
+		} else if (row == 5) {
 			brick.setFill(Color.GREEN);
-		} else if (i == 6) {
+		} else if (row == 6) {
 			brick.setFill(Color.BLUE);
-		} else if (i == 7) {
+		} else if (row == 7) {
 			brick.setFill(Color.INDIGO);
-		} else if (i == 8) {
+		} else if (row == 8) {
 			brick.setFill(Color.VIOLET);
 		}
 	}
-
 }
